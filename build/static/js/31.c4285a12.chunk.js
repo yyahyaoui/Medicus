@@ -1,0 +1,2 @@
+(this.webpackJsonpmedicus=this.webpackJsonpmedicus||[]).push([[31],{95:function(s,e,n){"use strict";n.r(e),n.d(e,"default",(function(){return u}));n(0);var t=n(76),i=n(1);function u(s){return Object(i.jsx)(i.Fragment,{children:Object(i.jsx)(t.a,{session:s.session,username:s.username,listView:!1})})}}}]);
+//# sourceMappingURL=31.c4285a12.chunk.js.map

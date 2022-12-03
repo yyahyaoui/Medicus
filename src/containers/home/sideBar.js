@@ -59,15 +59,15 @@ function Link(props) {
 function TopLinks(props) {
     const links = [];
     links.push({ path: "/", exact: true, title: "Dashboard", icon: "dashboard" });
-    links.push({ path: "/appointments?view=waiting", title: "Waiting Room", icon: "queue" });
-    links.push({ path: "/appointments", title: "Appointments", icon: "date_range" });
+    // links.push({ path: "/appointments?view=waiting", title: "Waiting Room", icon: "queue" });
+    // links.push({ path: "/appointments", title: "Appointments", icon: "date_range" });
 
-    if (props.session.isPhysician) {
-        links.push({ path: "/users", title: "Search Patient", icon: "person_search" });
-    } else {
-        links.push({ path: "/appointments?view=new", title: "New Appointment", icon: "post_add" });
-        links.push({ path: "/users", title: "Search Physician", icon: "person_search" });
-    }
+    // if (props.session.isPhysician) {
+    //     links.push({ path: "/users", title: "Search Patient", icon: "person_search" });
+    // } else {
+    //     links.push({ path: "/appointments?view=new", title: "New Appointment", icon: "post_add" });
+    //     links.push({ path: "/users", title: "Search Physician", icon: "person_search" });
+    // }
 
     return (
         <Links>
@@ -89,8 +89,8 @@ function TopLinks(props) {
 function ExtraLinks(props) {
     const links = [];
     links.push({ path: `/users/${props.session.username}`, title: "Profile", icon: "person" });
-    links.push({ path: "/settings", title: "Settings", icon: "settings" });
-    links.push({ path: "/help", title: "Help Center", icon: "help_outline" });
+    // links.push({ path: "/settings", title: "Settings", icon: "settings" });
+    // links.push({ path: "/help", title: "Help Center", icon: "help_outline" });
     links.push({ path: "/contact", title: "Contact Us", icon: "contact_support" });
 
     return (
