@@ -19,7 +19,7 @@ function _createUserSchema() {
   _createUserSchema = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee(conn) {
     return _regenerator.default.wrap(function _callee$(_context) {
       while (1) {
-        switch (_context.prev = _context.next) {
+        switch ((_context.prev = _context.next)) {
           case 0:
             _context.next = 2;
             return conn.db("medicus").createCollection("users", {
@@ -30,83 +30,95 @@ function _createUserSchema() {
                   additionalProperties: false,
                   properties: {
                     _id: {
-                      bsonType: "objectId"
+                      bsonType: "objectId",
                     },
                     username: {
                       bsonType: ["string"],
                       minLength: 1,
-                      description: "username of user for sign in. must be unique"
+                      description:
+                        "username of user for sign in. must be unique",
                     },
                     password: {
                       bsonType: ["string"],
                       minLength: 1,
-                      description: "password of user for sign in."
+                      description: "password of user for sign in.",
                     },
                     firstName: {
                       bsonType: ["string"],
                       minLength: 1,
-                      description: "First name of the user."
+                      description: "First name of the user.",
                     },
                     lastName: {
                       bsonType: ["string"],
                       minLength: 1,
-                      description: "Last name of the user."
+                      description: "Last name of the user.",
                     },
                     dob: {
                       bsonType: ["date"],
-                      description: "Date of Birth."
+                      description: "Date of Birth.",
                     },
                     gender: {
                       enum: ["Male", "Female", "Other"],
-                      description: "Gender of user."
+                      description: "Gender of user.",
                     },
                     emailId: {
                       bsonType: ["string"],
-                      description: "Email ID of user."
+                      description: "Email ID of user.",
                     },
                     phoneNumber: {
                       bsonType: ["string"],
-                      description: "Phone Number of user."
+                      description: "Phone Number of user.",
                     },
                     isPhysician: {
                       bsonType: ["boolean"],
-                      description: "Is user a physician?"
+                      description: "Is user a physician?",
                     },
                     qualification: {
                       bsonType: ["string"],
-                      description: "Qualification if user is a physician."
+                      description: "Qualification if user is a physician.",
                     },
                     specialization: {
                       bsonType: ["string"],
-                      description: "Specialization if user is a physician."
-                    }
+                      description: "Specialization if user is a physician.",
+                    },
                   },
-                  required: ["username", "password", "firstName", "isPhysician"],
+                  required: [
+                    "username",
+                    "password",
+                    "firstName",
+                    "isPhysician",
+                  ],
                   dependencies: {
                     qualification: ["isPhysician"],
-                    specialization: ["isPhysician"]
-                  }
-                }
+                    specialization: ["isPhysician"],
+                  },
+                },
               },
               validationLevel: "strict",
-              validationAction: "error"
+              validationAction: "error",
             });
 
           case 2:
             console.log("Users collection using schema was created.");
             _context.next = 5;
-            return conn.db(process.env.DB_URI).collection("users").createIndex({
-              username: 1
-            }, {
-              unique: true
-            });
+            return conn.db(process.env.DB_URI).collection("users").createIndex(
+              {
+                username: 1,
+              },
+              {
+                unique: true,
+              }
+            );
 
           case 5:
             console.log("Added username Index to Users collection.");
-
+            break;
           case 6:
+            break;
           case "end":
             return _context.stop();
+          default:
+          // do nothing
         }
       }
     }, _callee);

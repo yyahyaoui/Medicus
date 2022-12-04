@@ -3,19 +3,19 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import { useSelector } from 'react-redux';
 import { Loader } from './components/loaders';
 
-const WelcomeApp = lazy(() => import("./containers/welcome"));
+// const WelcomeApp = lazy(() => import("./containers/welcome"));
 const HomeApp = lazy(() => import("./containers/home"));
 
 
 export default function App() {
-    const session = useSelector(state => state.session);
+    // const session = useSelector(state => state.session);
     
-    const isAuthenticated = (session.authToken && session.authToken.length !== 0) ? true: false;
+    // const isAuthenticated = (session.authToken && session.authToken.length !== 0) ? true: false;
     return (
         <Router>
             <Suspense fallback={<Loader isLoading={true} />}>
                 <Switch>
-                    <Route exact path="/auth" render={(props) => {
+                    {/* <Route exact path="/auth" render={(props) => {
                         if (isAuthenticated) {
                             return (
                                 <Redirect to="/" />
@@ -25,17 +25,17 @@ export default function App() {
                                 <WelcomeApp {...props} />
                             );
                         }
-                    }} />
+                    }} /> */}
                     <Route path="/" render={(props) => {
-                        if (!isAuthenticated) {
-                            return (
-                                <Redirect to="/auth" exact={true} />
-                            );
-                        } else {
+                        // if (!isAuthenticated) {
+                        //     return (
+                        //         <Redirect to="/auth" exact={true} />
+                        //     );
+                        // } else {
                             return (
                                 <HomeApp {...props} />
                             );
-                        }
+                        // }
                     }} />
                 </Switch>
             </Suspense>

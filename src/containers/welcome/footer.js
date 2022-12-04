@@ -9,7 +9,7 @@ export default function FooterBar(props) {
             <Col className="col-auto">
                 <Row className="pt-1 align-items-center">
                     <MdIcon>copyright</MdIcon>
-                    <p className="my-2">Copyright by Goutham Prasanna.</p>
+                    <p className="my-2">Copyright by Anonymous.</p>
                 </Row>
             </Col>
         </footer>
