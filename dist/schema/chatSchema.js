@@ -19,7 +19,7 @@ function _createChatSchema() {
   _createChatSchema = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee(conn) {
     return _regenerator.default.wrap(function _callee$(_context) {
       while (1) {
-        switch (_context.prev = _context.next) {
+        switch ((_context.prev = _context.next)) {
           case 0:
             _context.next = 2;
             return conn.db("medicus").createCollection("chats", {
@@ -30,42 +30,43 @@ function _createChatSchema() {
                   additionalProperties: false,
                   properties: {
                     _id: {
-                      bsonType: "objectId"
+                      bsonType: "objectId",
                     },
                     title: {
                       bsonType: ["string"],
                       minLength: 1,
-                      description: "Title of chat."
+                      description: "Title of chat.",
                     },
                     host: {
                       bsonType: ["string"],
                       minLength: 1,
-                      description: "Username of host of chat."
+                      description: "Username of host of chat.",
                     },
                     startTime: {
                       bsonType: ["date"],
-                      description: "Start time of chat."
+                      description: "Start time of chat.",
                     },
                     members: {
                       bsonType: ["array"],
                       minLength: 1,
-                      description: "List of usernames of members within chat."
+                      description: "List of usernames of members within chat.",
                     },
                     activeMembers: {
                       bsonType: ["array"],
                       minLength: 1,
-                      description: "List of usernames of members active within chat."
+                      description:
+                        "List of usernames of members active within chat.",
                     },
                     appointmentId: {
                       bsonType: ["objectId", null],
-                      description: "Associated appointment Id for chat."
-                    }
+                      description: "Associated appointment Id for chat.",
+                    },
                   },
-                  required: ["title", "members", "host", "startTime"]
-                }
+                  required: ["title", "members", "host", "startTime"],
+                },
               },
               validationLevel: "strict",
-              validationAction: "error"
+              validationAction: "error",
             });
 
           case 2:
@@ -74,6 +75,8 @@ function _createChatSchema() {
           case 3:
           case "end":
             return _context.stop();
+          default:
+          // do nothing
         }
       }
     }, _callee);
