@@ -498,7 +498,8 @@ $chat-in-background: $background-1;
         padding: 12px;
         border: 1px solid #eeeeee;
         text-align: left;
-        background-color: rgba(217, 221, 146, 0.2);
+        background-color: $background-3;
+        color: #fff;
     }
     tr td {
         border: 1px solid #eeeeee;
